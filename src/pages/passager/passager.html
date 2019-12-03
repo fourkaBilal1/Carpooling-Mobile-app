@@ -1,0 +1,71 @@
+<!--
+  Generated template for the PassagerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title  class="title-text">passager</ion-title>
+    <img class="title-image" alt="logo" height="40"   src="../../assets/imgs/logo.png" >
+  </ion-navbar>
+  
+</ion-header>
+
+<ion-content padding>
+    
+    <h3>Mes demandes :</h3>
+    <h3 *ngIf="items.length === 0" style="text-align: center;">Aucune Demande enregistrée </h3>
+     
+    
+    <ion-list>
+    
+    <div *ngIf="items.length != 0" class="one-de">
+          <div *ngFor="let item of items" class="one-demand">
+              <div class="demand-head">
+                  <div class="dm-h">
+                      <p>{{item.From}}</p>
+                      <div class="arrow" ></div>
+                      <p>{{item.To}}</p>
+                  </div>
+                  
+                  <p class="date">le {{item.DateDem | date : 'yyyy-MM-dd' }}</p>
+                </div>
+                <div class="demand-foot">
+                  <div class="demand-foot-left">
+                    <p>A :  {{ item.DateDem | date : 'shortTime' }}</p>
+                    <p>Etat: {{ item.Etat }}</p>
+                  </div>
+                  <div class="demand-foot-right">
+                    <button ion-button *ngIf="cancelB" (click)="cancelDemand($event,item._id)" color="danger">Annuler la demande</button>
+                  </div>
+                </div>
+          </div>
+      </div>
+      
+    
+    </ion-list>
+    <!--(ionSelect)="waiting()"                   -->
+    <!-- (ionSelect)="accepted()"     -->
+    <!--   (ionSelect)="rejected()"  -->
+    <!--  (ionSelect)="canceled()"   -->
+    <!--  (ionSelect)="finished()"   -->
+
+
+</ion-content>
+<ion-footer>
+    <ion-tabs class="tabsNav" [selectedIndex]="SelectedI">
+        <ion-tab [root]="Page"  (ionSelect)="waiting()"   tabTitle="Waiting" tabIcon="clock"></ion-tab>
+        <ion-tab [root]="Page" (ionSelect)="accepted()" tabTitle="Accepted" tabIcon="checkmark"></ion-tab>
+        <ion-tab [root]="Page"  (ionSelect)="rejected()" tabTitle="Rejected" tabIcon="close"></ion-tab>
+        <ion-tab [root]="Page" (ionSelect)="canceled()" tabTitle="Canceled" tabIcon="exit"></ion-tab>
+        <ion-tab [root]="Page" (ionSelect)="finished()" tabTitle="finished" tabIcon="done-all"></ion-tab>
+      </ion-tabs>
+    <div class="wrapper-btn-add-demand">
+        <button ion-button class="btn-add-demand" (click)="addDemandClicked($event)" size="large" expand="block"><ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon> &nbsp; Ajouter une demande</button>
+      </div>
+</ion-footer>

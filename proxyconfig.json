@@ -1,0 +1,12 @@
+{
+    "/api": {
+        "target": "http://localhost:1234",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/adi": {
+        "target": "http://localhost:1111",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

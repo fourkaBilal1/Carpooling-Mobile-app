@@ -1,0 +1,46 @@
+<!--
+  Generated template for the ListOffersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+  <ion-navbar>
+    
+    <ion-title  class="title-text">Resultat de recherche</ion-title>
+    <img class="title-image" alt="logo" height="40"   src="../../assets/imgs/logo.png" >
+  </ion-navbar>
+  
+</ion-header>
+
+<ion-content padding>
+  <h3>les demandes :</h3>
+  <h3 *ngIf="listLenght === 0"  style="text-align: center;">Aucune demande enregistrée <br> pour cette offre </h3>
+
+  <ion-list ><!--*ngIf="listLenght != 0"-->
+    <div *ngIf="listLenght != 0" class="one-demoff">
+      <div *ngFor="let user of list" class="one-user-offer">
+        <div *ngFor="let offer of user.offers"  class="one-offer">
+            <div class="offer-head">
+              <ion-icon class="i-contact" ios="ios-contact" md="md-contact"></ion-icon>
+              <p> {{ user.nom }}  &nbsp; {{ user.prenom }}</p>
+              <p class="Prix"><em> {{ offer.Prix }} Dhs </em> </p>
+            </div>
+            <div class="offer-center">
+                <p>{{ user.sexe }}</p>
+                <p>{{ user.age }} ans</p>
+                <div class="NbPlaces">{{ offer.NbPlaces }}</div>
+              </div>
+            <div class="offer-foot">
+              <p>le {{offer.DateOffer | date : 'yyyy-MM-dd' }} </p>
+              <p>A {{offer.DateOffer | date : 'shortTime' }}</p>
+              <button ion-button (click)="Reserver($event,user.email,offer._id)" color="danger">Reserver</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+  </ion-list>
+    
+</ion-content>

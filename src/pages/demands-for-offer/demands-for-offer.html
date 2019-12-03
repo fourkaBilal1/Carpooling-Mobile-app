@@ -1,0 +1,40 @@
+<!--
+  Generated template for the DemandsForOfferPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+      
+    <ion-title  class="title-text">demandsForOffer</ion-title>
+    <img class="title-image" alt="logo" height="40"   src="../../assets/imgs/logo.png" >
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <h3>les demandes :</h3>
+    <h3 *ngIf="items.length === 0" style="text-align: center;">Aucune demande enregistrée <br> pour cette offre </h3>    
+    <ion-list >
+      <div *ngIf="items.length != 0" class="one-demoff">
+          <div *ngFor="let item of items; let i = index"   class="one-offer">
+              <div class="offer-head">
+                <ion-icon class="i-contact" ios="ios-contact" md="md-contact"></ion-icon>
+                <p>{{item.user.nom}} &nbsp;{{item.user.prenom}}</p>
+                <p class="Tel">{{item.user.tel}} </p>
+              </div>
+              <div class="offer-center">
+                  <p>{{item.user.sexe}}</p>
+                  <p>{{item.user.age}} ans</p>
+                </div>
+              <div class="offer-foot">
+                  <p *ngIf="(item.user.Etat != 'waiting')" >Etat: {{item.user.Etat}}</p>
+                  <button *ngIf="(item.user.Etat == 'waiting')" (click)="acceptDemand($event,item.idReservation,i)" class="btn-offer-foot-right-1" ion-button color="info">Accepter</button>
+                  <button  *ngIf="(item.user.Etat == 'waiting')" (click)="rejectDemand($event,item.idReservation,i)" ion-button class="btn-offer-foot-right-2" color="danger">Refuser</button>
+              </div>
+          </div>
+      </div>
+      
+    </ion-list>
+</ion-content>

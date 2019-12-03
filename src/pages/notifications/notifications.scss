@@ -1,0 +1,36 @@
+page-notifications {
+    ion-list{
+        
+        .btn-not{
+            
+            margin-bottom: 10px;
+            margin-top: -10px;
+            
+            border: 1px solid rgb(212, 228, 228) ;
+            border-radius: 3px;
+            background-color: aliceblue;
+            &:hover{
+                background-color: rgba(240, 248, 255, 0.336);
+            }
+            .firstLine{
+                display: flex;
+                margin-top: -10px;
+                .description{
+                    margin-top: 10px;
+                    margin-left: 10px;
+                    white-space: initial;
+                    
+                }
+            }
+            .secondLine{
+                float: right;
+                position: relative;
+                font-size: .7em;
+                
+                margin-bottom: 0;
+                .item-time{}
+            }
+        }
+    }
+    
+}

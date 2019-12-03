@@ -1,3 +1,103 @@
 page-home {
+    .title-text{
+        display: inline-block;
+        margin: 10px auto;
+    }
+    .title-image {
+        float: right;
+        margin-top: 8px;
+        margin-right: 10px;
+    
+    }
+    #oval1 {
+        background-color: #20B2AA;
+        width: 100%;
+        height: 8%;
+        border-radius: 50% / 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+      .content-image{
+          width: 60%;
+          
+          display: block;
+          margin: 25% 0 0 20%;
+      }
+      #oval2 {
+        background-color: #20B2AA;
+        width: 100%;
+        height: 10%;
+        border-radius: 50% / 100%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        color: red;
+        text-align: center;
+        font-size: 2.6em;
+        font-family:  "Eras ITC", "Eras BOLD ITC",  sans-serif ;
+        font-weight: 600;
+        .bestCAR{
+            padding-top: 3vh;
+            }
+        }
+      .container{
+          width: 100%;
+          min-height: 40vh;
+          background-color: #20B2AA;
+          z-index: 2;
+          .para{
+              padding-top: 30%; 
+              width: 80%;
+              text-align: center;
+              margin: 0 auto;
+               
+              font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+              font-size: 1.5em;
+              font-weight: bold;
+              .redT{
+                  display: inline-block;
+                  color:red;
+              }
+          }
+      }
+      .box-orange {
+        position: absolute;
+        background: #fff;
+        width: 100%;
+        height: 10%;
+        border-radius: 50% / 100%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        z-index: 5;
+        color: red;
+        text-align: center;
+        padding: 0;
+        font-size: 3.1em;
+        font-family:  "Eras ITC", "Eras BOLD ITC",  sans-serif ;
+        font-weight: 600;
+      }
+    
+      .buttons{
+          text-align: center;
+          margin-bottom: 6px;
+          Button{
+              width: 40vw;
+              font-size: 3.2vw;
+          }
+      }
+    
+      @media only screen and (max-width: 1000px) {
+        #oval2, .box-orange {
+          font-size: 2.2em;
+        }
+      }
+}
+.title-text{
+    display: inline-block;
+    margin: 10px auto;
+}
+.title-image {
+    float: right;
+    margin-top: 8px;
+    margin-right: 10px;
 
 }

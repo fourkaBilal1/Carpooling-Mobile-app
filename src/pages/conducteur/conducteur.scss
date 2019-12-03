@@ -1,0 +1,133 @@
+page-conducteur {
+    ion-list{
+        
+        .one-offer{
+            background-color: #fff;
+            border: 2px solid rgb(224, 16, 16);
+            border-radius: 8px;
+            box-shadow: 0px 0px 4px 0px #000;
+            height: 150px;
+            margin-bottom: 8px;
+            padding: 10px;
+            &:hover{
+                background-color: rgba(255, 19, 19, 0.842);
+                color: #fff;
+            }
+            .offer-head{
+                display:inline-flex;
+                width: 85vw;
+                .of-h{
+                    display: inline-flex;
+                    width: 60vw;
+                    p{
+                        font-size: 3.5vw;
+                    }
+                    
+                }
+                p{
+                    font-size: 3.5vw;
+                }
+                .arrow {
+                    position: relative;
+                    background: rgb(224, 16, 16);
+                    height: 10px;
+                    width: 50px;
+                    margin: 20px 20px 10px 20px;
+                    &:after{
+                        left: 100%;
+                        top: 50%;
+                        border: solid transparent;
+                        content: " ";
+                        height: 0;
+                        width: 0;
+                        position: absolute;
+                        pointer-events: none;
+                        border-color: rgba(136, 183, 213, 0);
+                        border-left-color: rgb(224, 16, 16);
+                        border-width: 10px;
+                        margin-top: -10px;
+                    }
+                }
+                .dated{
+                    width: 24vw;
+                    position: relative;
+                    right: 0;
+                    margin-left: 0vw;
+                    .date{
+                        float: right;
+                        font-size: 3vw;
+                    }
+                    
+                }
+               
+                
+            
+            }
+            .offer-foot{
+                display: block;
+                
+                .offer-foot-left{
+                    float: left;
+                    max-width: 30vw;
+                    font-size: 3vw;
+                }
+                .offer-foot-right{
+                    float: right;
+                    margin-top: 10px;
+                    margin-right: 10px;
+                    max-width: 30vw;
+                    button{
+                        background-color: #20B2AA;
+                    }
+                }
+                .offer-foot-center{
+                   
+                    float: right;
+                    margin-right: 180px;
+                    max-width: 30vw;
+                    font-size: 3vw;
+                    .prix{
+                        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                        font-size: 1.1em;
+                    }
+                }
+            }
+        }
+        .btn-cancel-away{
+            float: right;
+            margin-top: -84px;
+            margin-right: 21px;
+            max-width: 30vw;
+            background-color: #20B2AA;
+            font-size: 3vw;
+            &:hover{
+                background-color: rgb(26, 141, 135) !important;
+            }
+        }
+        
+    }
+    .tabsNav{
+        margin-top: -40px;
+        height: 50px;
+    }
+    .wrapper-btn-add-offer{
+        text-align: center;
+        padding: 0;
+        position: static;
+        .btn-add-offer{
+            width: 90%;
+            border-radius: 30px;
+            background-color: #fff;
+            color:rgb(224, 16, 16);
+            border: 1px solid rgb(224, 16, 16);
+            padding: 0px;
+            &:hover{
+                background-color: rgb(224, 16, 16);
+                color: #fff;
+            }
+        }
+    }
+    h3{
+        padding: 2vh 0 0 3vw;
+    }
+}

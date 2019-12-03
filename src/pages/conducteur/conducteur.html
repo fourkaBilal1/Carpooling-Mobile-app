@@ -1,0 +1,72 @@
+<!--
+  Generated template for the ConducteurPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title  class="title-text">Conducteur</ion-title>
+    <img class="title-image" alt="logo" height="40"   src="../../assets/imgs/logo.png" >
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <h3>Mes offres :</h3>
+    <h3 *ngIf="items.length === 0" style="text-align: center;">Aucune Offre enregistrée </h3>
+    <div *ngIf="items.length != 0" class="one-off">
+      <ion-list >
+        <div *ngFor="let item of items" class="off">
+          <!--(click)="offerClick($event , item._id)"-->
+            <div (click)="offerClick($event , item._id)" class="one-offer">
+                <div class="offer-head">
+                    <div class="of-h">
+                        <p>{{item.From}}</p>
+                        <div class="arrow" ></div>
+                        <p>{{item.To}}</p>
+                    </div>
+                    
+                    <p class="date">le {{item.DateOffer | date : 'yyyy-MM-dd' }}</p>
+                  </div>
+                  <div class="offer-foot">
+                    <div class="offer-foot-left">
+                      <p>A :  {{item.DateOffer | date:'shortTime'  }}</p>
+                      <p>Etat: {{ item.Etat }}</p>
+                    </div>
+                    
+                    
+                    <div class="offer-foot-center">
+                        <p class="prix">{{item.Prix }} Dhs</p>
+                        <p>Nb places: {{ item.NbPlaces }}</p>
+                      </div>
+                  </div>
+            </div>
+            <button *ngIf="cancelB" class="btn-cancel-away" ion-button (click)="cancelOffer(item._id,email)" color="info">Annuler l'offre</button>
+        </div>
+        
+      </ion-list>
+    </div>
+  
+      
+      <!-- <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+        <ion-icon [name]="item.icon" item-start></ion-icon>
+        {{item.title}}
+        <div class="item-note" item-end>
+          {{item.note}}
+        </div>
+      </button>-->
+    
+    
+</ion-content>
+<ion-footer>
+    <ion-tabs class="tabsNav">
+        <ion-tab [root]="Page"  (ionSelect)="progress()"   tabTitle="In Progress" tabIcon="clock"></ion-tab>
+        <ion-tab [root]="Page"  (ionSelect)="canceled()" tabTitle="Canceled" tabIcon="exit"></ion-tab>
+        <ion-tab [root]="Page"  (ionSelect)="finished()" tabTitle="finished" tabIcon="done-all"></ion-tab>
+      </ion-tabs>
+    <div class="wrapper-btn-add-offer">
+        <button ion-button (click)="addOfferClicked($event)" class="btn-add-offer" size="large" expand="block"><ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon> &nbsp; Ajouter une offre</button>
+      </div>
+</ion-footer>

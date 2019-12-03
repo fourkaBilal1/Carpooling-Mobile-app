@@ -1,0 +1,58 @@
+<!--
+  Generated template for the AddDemandPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title class="title-text">addDemand</ion-title>
+    <img class="title-image" alt="logo" height="40"   src="../../assets/imgs/logo.png" >
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form  #form="ngForm" (ngSubmit)="addDemand($event,form)">
+        <ion-grid>
+          <ion-row color="primary" justify-content-center>
+            <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+              <div text-center>
+                <h3>Vas y! Ajoutez votre demande</h3>
+              </div>
+              <div padding>
+                <ion-item>
+                  <ion-input  name="From" [(ngModel)]="FromF" type="text" placeholder="départ" ngModel required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input name="To" [(ngModel)]="ToF" type="text" placeholder="destination" ngModel required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input min="1" name="NbPlaces" [(ngModel)]="NbPlacesF" [ngClass]="invalidPlaces ? 'invalidPlacesc' : ''" type="number" placeholder="Nombre de places..." ngModel required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-label position="floating"> &nbsp; MM/DD/YYYY</ion-label>
+                  <ion-datetime [(ngModel)]="date" [min]=todayDate [max]=maxDate name="date" displayFormat="MM/DD/YYYY" ngModel required></ion-datetime>
+                </ion-item>
+                <ion-item>
+                    <ion-label>&nbsp;&nbsp;HH:mm</ion-label>
+                    <ion-datetime [(ngModel)]="time" name="time" displayFormat="HH:mm" ngModel required></ion-datetime>
+                  </ion-item>
+              </div>
+              <div padding>
+                <button ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">Ajouter la demande</button>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+      <h2>vos dernières recherche : </h2>
+      <ion-list class="histR" >
+        <button ion-item  *ngFor="let item of hist" (click)="itemTapped($event, item)">
+          <ion-icon [name]="item.icon" item-start></ion-icon>
+          De : &nbsp;<strong><em> {{item.From}}</em></strong> &nbsp; vers : &nbsp;<strong> <em>{{item.To}}</em></strong>
+          <div class="item-note" item-end>
+            <strong><em> {{item.NbPlaces}}&nbsp;places</em></strong>
+          </div>
+        </button>
+      </ion-list>
+</ion-content>

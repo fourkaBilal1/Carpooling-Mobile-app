@@ -1,0 +1,65 @@
+page-list-offers {
+    ion-list{
+        .one-offer{
+            background-color: #fff;
+            border: 2px solid rgb(224, 16, 16);
+            border-radius: 8px;
+            box-shadow: 0px 0px 4px 0px #000;
+            height: 150px;
+            margin-bottom: 8px;
+            padding: 10px;
+            
+            .offer-center{
+                  
+                margin-top: 10px;
+                
+                .NbPlaces{
+                    float: right;
+                    margin-top: 13px;
+                    margin-right: 3vw;
+
+                }
+                p{
+                    display: inline-flex;
+                    
+                    font-size: 3vw; 
+                    margin-left: 6vw;         
+                }
+            }
+            .offer-head{  
+                margin-bottom: -10px;
+                line-height: 6px;
+                .i-contact{
+                    width: 5vw;
+                }       
+                p{
+                    font-size: 3vw; 
+                    display: inline-block;       
+                }
+                .Prix{
+                    float:right;
+                    margin-right: 3vw;
+                }
+            }
+            .offer-foot{
+                display: block;
+                margin-top: 0px;
+                margin-right: 3vw;
+                background-color: red;
+                p{
+                    float: left;
+                    font-size: 3vw;
+                    margin-left: 6vw;
+                }
+                button{
+                    float: right;
+                    background-color: #20B2AA;
+                } 
+            }
+        }      
+    }
+   
+    h3{
+        padding: 2vh 0 0 3vw;
+    }
+}

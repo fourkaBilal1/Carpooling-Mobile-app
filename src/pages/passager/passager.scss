@@ -1,0 +1,110 @@
+page-passager {
+
+
+    ion-list{
+        .one-demand{
+            background-color: #fff;
+            border: 2px solid #20B2AA;
+            border-radius: 8px;
+            box-shadow: 0px 0px 4px 0px #000;
+            height: 150px;
+            margin-bottom: 8px;
+            padding: 10px;
+            .demand-head{
+                display:inline-flex;
+                width: 85vw;
+                background-color: yellow;
+                .dm-h{
+                    display: inline-flex;
+                    width: 60vw;
+                    
+                    p{
+                        font-size: 3.5vw;
+                    }
+                    
+                }
+                .date{
+                    float: right;
+                    font-size: 3vw;
+                    background-color: #20B2AA;
+                }
+                .arrow {
+                    position: relative;
+                    background: #20B2AA;
+                    height: 10px;
+                    width: 50px;
+                    margin: 20px 20px 10px 20px;
+                    &:after{
+                        left: 100%;
+                        top: 50%;
+                        border: solid transparent;
+                        content: " ";
+                        height: 0;
+                        width: 0;
+                        position: absolute;
+                        pointer-events: none;
+                        border-color: rgba(136, 183, 213, 0);
+                        border-left-color: #20B2AA;
+                        border-width: 10px;
+                        margin-top: -10px;
+                    }
+                }
+                .dated{
+                    width: 24vw;
+                    position: relative;
+                    right: 0;
+                    margin-left: 0vw;
+                    .date{
+                        float: right;
+                        font-size: 3vw;
+                    }
+                    
+                }
+                
+                
+            
+            }
+            .demand-foot{
+                display: block;
+                
+                .demand-foot-left{
+                    float: left;
+                }
+                .demand-foot-right{
+                    float: right;
+                    margin-top: 10px;
+                    margin-right: 10px;
+                    button{
+                        font-size: 3vw;
+                    }
+                }
+            }
+        }
+        
+    }
+    .tabsNav{
+        margin-top: -40px;
+        height: 50px;
+    }
+    .wrapper-btn-add-demand{
+        text-align: center;
+        padding: 0;
+        position: static;
+        .btn-add-demand{
+            width: 90%;
+            border-radius: 30px;
+            background-color: #fff;
+            color:#20B2AA;
+            border: 1px solid #20B2AA;
+            padding: 0px;
+
+            &:hover{
+                background-color: #20B2AA;
+                color: #fff;
+            }
+        }
+    }
+    h3{
+        padding: 2vh 0 0 3vw;
+    }
+}
